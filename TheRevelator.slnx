@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="BeyondTheSportlight/BeyondTheSportlight.Client/BeyondTheSportlight.Client.csproj" />
+  <Project Path="BeyondTheSportlight/BeyondTheSportlight/BeyondTheSportlight.csproj" />
+  <Project Path="TheRevelator.AppHost/TheRevelator.AppHost.csproj" />
+  <Project Path="TheRevelator.ServiceDefaults/TheRevelator.ServiceDefaults.csproj" />
+  <Project Path="TheRevelator/TheRevelator.csproj" />
+</Solution>

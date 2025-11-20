@@ -1,0 +1,26 @@
+@page
+@model TheRevelator.Areas.Identity.Pages.Account.RegisterModel
+@{
+    ViewData["Title"] = "Registrieren";
+}
+
+<h1>Registrieren</h1>
+
+<form method="post">
+    <div>
+        <label asp-for="Input.Email">E?Mail</label>
+        <input asp-for="Input.Email" />
+        <span asp-validation-for="Input.Email"></span>
+    </div>
+    <div>
+        <label asp-for="Input.Password">Passwort</label>
+        <input asp-for="Input.Password" type="password" />
+        <span asp-validation-for="Input.Password"></span>
+    </div>
+    <div>
+        <label asp-for="Input.ConfirmPassword">Passwort bestätigen</label>
+        <input asp-for="Input.ConfirmPassword" type="password" />
+        <span asp-validation-for="Input.ConfirmPassword"></span>
+    </div>
+    <button type="submit">Registrieren</button>
+</form>
