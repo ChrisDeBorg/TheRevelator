@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+</style>
+</head>
+<body>
+
+
+<div id="nav-placeholder"></div>
+
+
+<main>
+<article>
+<header>
+<h1>Willkommen auf der News-Startseite</h1>
+</header>
+
+
+<!-- Theme Toggle Button -->
+<button id="theme-toggle" class="theme-toggle" aria-label="Theme umschalten">🌓</button>
+<button id="nav-toggle" class="nav-toggle" aria-label="Navigation öffnen/schließen">☰</button>
+
+
+<p>Hier findest du aktuelle Nachrichten aus Politik, Wirtschaft, Kultur und mehr.</p>
+
+
+<section>
+<header><h2>Top-Meldung</h2></header>
+<p>Dies ist ein Beispiel für eine hervorgehobene Meldung.</p>
+<footer><a href="articles/artikel.html">Zum Artikel →</a></footer>
+</section>
+</article>
+</main>
+
+
+<script src="script/nav-loader.js"></script>
+
+<script>
+/* Navigation Toggle */
+const toggleBtn = document.getElementById("nav-toggle");
+const navList = document.querySelector("nav ul");
+toggleBtn.addEventListener("click", () => {
+navList.classList.toggle("open");
+});
+
+
+/* Theme Handling */
+const themeToggle = document.getElementById("theme-toggle");
+const root = document.documentElement;
+
+
+// gespeichertes Theme laden
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+root.setAttribute("data-theme", savedTheme);
+} else {
+// Browser-Theme übernehmen
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+root.setAttribute("data-theme", prefersDark ? "dark" : "light");
+}
+
+
+// Theme wechseln + speichern
+themeToggle.addEventListener("click", () => {
+const current = root.getAttribute("data-theme");
+const next = current === "dark" ? "light" : "dark";
+root.setAttribute("data-theme", next);
+localStorage.setItem("theme", next);
+});
+</script>
+</body>
+</html>
