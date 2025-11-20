@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 </style>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News Startseite</title>
+<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
@@ -11,12 +16,14 @@
 <article>
 <header>
 <h1>Willkommen auf der News-Startseite</h1>
+<nav class="topnav">
+<a href="index.html">Start</a>
+<a href="politik.html">Politik</a>
+<a href="wirtschaft.html">Wirtschaft</a>
+<a href="kultur.html">Kultur</a>
+</nav>
 </header>
 
-
-<!-- Theme Toggle Button -->
-<button id="theme-toggle" class="theme-toggle" aria-label="Theme umschalten">🌓</button>
-<button id="nav-toggle" class="nav-toggle" aria-label="Navigation öffnen/schließen">☰</button>
 
 
 <p>Hier findest du aktuelle Nachrichten aus Politik, Wirtschaft, Kultur und mehr.</p>
@@ -31,40 +38,5 @@
 </main>
 
 
-<script src="script/nav-loader.js"></script>
-
-<script>
-/* Navigation Toggle */
-const toggleBtn = document.getElementById("nav-toggle");
-const navList = document.querySelector("nav ul");
-toggleBtn.addEventListener("click", () => {
-navList.classList.toggle("open");
-});
-
-
-/* Theme Handling */
-const themeToggle = document.getElementById("theme-toggle");
-const root = document.documentElement;
-
-
-// gespeichertes Theme laden
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme) {
-root.setAttribute("data-theme", savedTheme);
-} else {
-// Browser-Theme übernehmen
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-root.setAttribute("data-theme", prefersDark ? "dark" : "light");
-}
-
-
-// Theme wechseln + speichern
-themeToggle.addEventListener("click", () => {
-const current = root.getAttribute("data-theme");
-const next = current === "dark" ? "light" : "dark";
-root.setAttribute("data-theme", next);
-localStorage.setItem("theme", next);
-});
-</script>
 </body>
 </html>
