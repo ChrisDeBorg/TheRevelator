@@ -49,7 +49,7 @@ font-weight: 600;
 
 article {
 max-width: 860px;
-margin: 2rem auto;
+margin: 3rem auto;
 background: var(--bg);
 border: 1px solid var(--border);
 box-shadow: 0 2px 8px var(--shadow);
@@ -57,9 +57,13 @@ padding: 2rem;
 border-radius: .4rem;
 }
 
+article section {
+margin-bottom: 2rem;
+}
 
 article header {
-border-bottom: 1px solid var(--border);
+border-top: 1px solid var(--border);
+margin-top: 2rem;
 margin-bottom: 1rem;
 padding-bottom: .5rem;
 }
