@@ -68,10 +68,21 @@ margin-bottom: 1rem;
 padding-bottom: .5rem;
 }
 
-
 figure {
 text-align: center;
 margin: 1.5rem 0;
+}
+
+figure.float-right {
+  float: right;
+  max-width: 40%;
+  margin: 0 0 1rem 1rem;
+}
+
+figure.float-left {
+  float: left;
+  max-width: 40%;
+  margin: 0 1rem 1rem 0;
 }
 
 

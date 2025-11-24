@@ -40,7 +40,7 @@ builder.Services.AddIdentityCore<ApplicationUser>(options =>
     .AddSignInManager()
     .AddDefaultTokenProviders();
 
-builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
+//builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
 
 builder.WebHost.UseKestrel(options =>
 {
@@ -75,9 +75,9 @@ app.MapRazorComponents<App>()
 app.MapAdditionalIdentityEndpoints();
 
 // Development-only: expose a simple inbox to view sent emails
-if (app.Environment.IsDevelopment())
-{
-    app.MapGet("/dev/emails", (InMemoryEmailStore store) => Results.Ok(store.GetAll()));
-}
+//if (app.Environment.IsDevelopment())
+//{
+//    app.MapGet("/dev/emails", (InMemoryEmailStore store) => Results.Ok(store.GetAll()));
+//}
 
 app.Run();
